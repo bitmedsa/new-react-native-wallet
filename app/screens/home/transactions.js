@@ -238,29 +238,48 @@ export default class Transactions extends Component {
           {!this.state.initialLoading && (
             <FlatList
               data={this.state.data}
-              renderItem={({ item }) => (
+             renderItem={({ item }) => {
+               console.log("item:",item)
+              let sender = 'Received',
+                receiver = 'Sent';
+
+              if (item.tx_type == 'debit' && item.status == 'Complete') {
+                let { user } = item.destination_transaction;
+                receiver = `Paid to ${user.first_name} ${user.last_name}`;
+              }
+              if (item.tx_type == 'credit' && item.status == 'Complete') {
+                if (item.source_transaction) {
+                  let { user } = item.source_transaction;
+
+                  sender = `From ${user.first_name} ${user.last_name}`;
+                } else {
+                  sender = 'From BitMedSA';
+                }
+              }
+              return (
                 <ListItem
                   avatar={
-                    this.state.profile.profile != null
-                      ? this.state.profile.profile
-                      : 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgmT5tM-IGcFDpqZ87p9zKGaWQuzpvAcDKfOTPYfx5A9zOmbTh8RMMFg'
+                   this.state.profile.profile != null
+                   ? this.state.profile.profile
+                    :'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgmT5tM-IGcFDpqZ87p9zKGaWQuzpvAcDKfOTPYfx5A9zOmbTh8RMMFg'
                   }
-                  title={item.tx_type === 'credit' ? 'Received' : 'Sent'}
-                  subtitle={moment(item.created).fromNow()}
-                  rightTitle={`${item.currency.symbol}${this.getAmount(
-                    item.amount,
-                    item.currency.divisibility,
-                  )}`}
+                  title={item.tx_type === 'credit' ? sender : receiver}
+                  subtitle={moment(item.created).format('DD/MM/YYYY HH:MM')}
+                  rightTitle={`${item.amount < 0 ? '- ' : ''}${
+                    item.currency.symbol
+                  }${this.getAmount(item.amount, item.currency.divisibility)}`}
                   rightTitleStyle={{ color: '#bdc6cf' }}
-                  containerStyle={{ paddingRight: 20 }}
                   hideChevron
                   roundAvatar
                   onPress={() => {
-                    this.state.showDialog(item);
+                    this.props.showDialog(item);
                   }}
+                  titleStyle={{ fontSize: 12 }}
+                  subtitleStyle={{ fontSize: 12 }}
                   //containerStyle={{'backgroundColor':'#FAFBFC'}}
                 />
-              )}
+              );
+            }}
               keyExtractor={tx => tx.id}
               onRefresh={this.handleRefresh.bind(this)}
               refreshing={this.state.refreshing}
