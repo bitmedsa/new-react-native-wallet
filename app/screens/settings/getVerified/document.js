@@ -27,7 +27,8 @@ export default class Document extends Component {
   }
 
   componentWillMount() {
-    if (this.state.title === 'Proof of Identity') {
+    console.log("title:", this.state.title)
+    if (this.state.title === 'Proof of Identity' || this.state.title === 'ID Document') {
       this.setState({
         type: 'government_id',
       });
@@ -95,10 +96,13 @@ export default class Document extends Component {
         <Header navigation={this.props.navigation} back title="Document" />
         <View style={styles.topContainer}>
           <Text style={{ fontSize: 18, textAlign: 'center' }}>
-            {this.state.title === 'ID Selfie'
-              ? `Take a picture of yourself using your phone camera`
-              :`Upload a bank statement, utility bill or letter from a Commissioner of Oaths confirming your ${this.state.title}`
-            }
+            {this.state.type === 'utility_bill'
+              ? `Upload a bank statement, utility bill or letter from a Commissioner of Oaths confirming your proof of address`
+              : this.state.title === 'ID Selfie'
+                ? `Take a picture of yourself using your phone camera`
+                : this.state.type === 'government_id' 
+                ? `Upload your National ID or Passport`
+                  :`Upload a bank statement, utility bill or letter from a Commissioner of Oaths confirming your proof of address`}
           </Text>
         </View>
         <View style={styles.bottomContainer}>
