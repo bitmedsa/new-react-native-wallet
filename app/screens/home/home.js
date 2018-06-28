@@ -328,34 +328,33 @@ export default class Home extends Component {
                 <ScrollView showsVerticalScrollIndicator={false}>
                   <HomeCard
                     key={0}
-                    title="Welcome to Rehive"
+                    title="Welcome to BitMed"
                     image={require('./../../../assets/icons/new_logo.png')}
-                    text="Put your logo and brand here."
                     buttonText="Cool"
                   />
-                  <HomeCard
+                  {/* <HomeCard
                     key={1}
                     title="Get started"
                     image={require('./../../../assets/icons/demo1.png')}
                     text="Tell your customers what your app is about."
                     buttonText="Let's go"
-                  />
-                  <HomeCard
-                    key={2}
+                  /> */}
+                  {/* <HomeCard
+                    key={1}
                     title="This is a demo app"
                     image={require('./../../../assets/icons/demo2.png')}
                     text="Note that you have to verify your email or mobile number to claim funds that has been sent to you."
                     buttonText="Cool"
                   />
                   <HomeCard
-                    key={3}
+                    key={2}
                     title="Get verified"
                     image={require('./../../../assets/icons/demo3.png')}
                     text="Go to get verified page"
                     buttonText="Verify"
                     navigation={this.props.navigation}
-                  />
-                  <View key={4} style={styles.falseView} />
+                  /> */}
+                  <View key={1} style={styles.falseView} />
                 </ScrollView>
               </View>
               <Transactions

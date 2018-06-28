@@ -61,7 +61,7 @@ export default class Deposit extends Component {
                     />
                     <View style={styles.comment}>
                         <Text style={styles.commentText}>
-                            No deposit instructions have been provided.
+                        Make a deposit Deposit into the following Bank Account at Standard Bank: 301700338 use your mobile number as reference to Deposit at a Standard Bank ATM. Your balance will update in 1 hour. 
                         </Text>
                     </View>
                     <View style={[styles.bankInfo, {flex: 6}]}/>

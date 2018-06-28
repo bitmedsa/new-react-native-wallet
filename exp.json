@@ -1,8 +1,8 @@
 {
-  "name": "Rehive Wallet",
+  "name": "BitMed Wallet",
   "description": "A multi-currency wallet built on the Rehive platform.",
   "version": "0.1.0",
-  "slug": "rehive-wallet",
+  "slug": "BitMed-Wallet",
   "privacy": "public",
   "sdkVersion": "24.0.0",
   "orientation": "portrait",

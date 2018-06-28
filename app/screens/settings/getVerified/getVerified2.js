@@ -318,9 +318,9 @@ export default class GetVerified extends Component {
                                 buttonText={this.state.proof_of_identity_status.toUpperCase()}
                                 gotoAddress="Document" goTo={this.goTo}/>
 
-                        <Option title="Advanced Proof of Identity" subtitle={this.state.advance_proof_of_identity}
+                        {/* <Option title="Advanced Proof of Identity" subtitle={this.state.advance_proof_of_identity}
                                 buttonText={this.state.advance_proof_of_identity_status.toUpperCase()}
-                                gotoAddress="Document" goTo={this.goTo}/>
+                                gotoAddress="Document" goTo={this.goTo}/> */}
 
                         <Option title="Proof of Address" subtitle={this.state.proof_of_address}
                                 buttonText={this.state.proof_of_address_status.toUpperCase()}

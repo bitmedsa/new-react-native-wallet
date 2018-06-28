@@ -223,7 +223,7 @@ class LoginForm extends Component {
             }}
           />
           <Input
-            placeholder="e.g. Rehive"
+            placeholder="e.g. bitmedsa"
             label="Company"
             required
             requiredError={companyError}
