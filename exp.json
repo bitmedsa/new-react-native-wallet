@@ -17,7 +17,7 @@
   },
   "ios": {
     "supportsTablet": true,
-    "bundleIdentifier": "com.rehive.wallet"
+    "bundleIdentifier": "com.bitmed.sa"
   },
   "android": {
     "package": "com.rehive_wallet"
