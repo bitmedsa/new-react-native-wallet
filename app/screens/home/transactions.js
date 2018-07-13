@@ -239,7 +239,7 @@ export default class Transactions extends Component {
             <FlatList
               data={this.state.data}
              renderItem={({ item }) => {
-               console.log("item:",item)
+               console.log("item:", this.getAmount(item.amount, item.currency.divisibility))
               let sender = 'Received',
                 receiver = 'Sent';
 
@@ -267,7 +267,7 @@ export default class Transactions extends Component {
                   subtitle={moment(item.created).format('DD/MM/YYYY HH:MM')}
                   rightTitle={`${item.amount < 0 ? '- ' : ''}${
                     item.currency.symbol
-                  }${this.getAmount(item.amount, item.currency.divisibility)}`}
+                  }${this.getAmount(item.amount, item.currency.divisibility).replace('-','')}`}
                   rightTitleStyle={{ color: '#bdc6cf' }}
                   hideChevron
                   roundAvatar

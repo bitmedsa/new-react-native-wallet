@@ -36,7 +36,7 @@ export default class Deposit extends Component {
             }
         }
         else {
-            Alert.alert('Error',
+            Alert.alert('Deposits can be made at Spar, Shoprite, PicknPay, Ackermansand Boxer (Pay@ Account 1161)',
                 responseJson.message,
                 [{text: 'OK'}])
         }
@@ -61,7 +61,7 @@ export default class Deposit extends Component {
                     />
                     <View style={styles.comment}>
                         <Text style={styles.commentText}>
-                        Make a deposit Deposit into the following Bank Account at Standard Bank: 301700338 use your mobile number as reference to Deposit at a Standard Bank ATM. Your balance will update in 1 hour. 
+                            Go to Spar, Shoprite, Ackermans or Pep to deposit into this Pay@ account: 1161. Use your mobile number as a reference. Allow 4 hours for new balance to reflect.
                         </Text>
                     </View>
                     <View style={[styles.bankInfo, {flex: 6}]}/>
