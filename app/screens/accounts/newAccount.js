@@ -99,7 +99,6 @@ export default class NewAccounts extends Component {
         //console.log(UniqueAccount[i].reference+ " " + getAccountList.reference)
         if (UniqueAccount[i].reference === getAccountList.reference) {
           UniqueAccount[i].activeCurrency = true;
-          console.log(i);
         } else {
           UniqueAccount[i].activeCurrency = false;
         }

@@ -72,7 +72,6 @@ export default class AmountEntry extends Component {
         }
 
         let responseJson = await TransectionService.withdraw(amount, this.state.reference, this.state.currency)
-        console.log(responseJson)
         if (responseJson.status === "success") {
             Alert.alert('Success',
                 "Transaction successful",

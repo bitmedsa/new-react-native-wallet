@@ -61,7 +61,8 @@ export default class Deposit extends Component {
                     />
                     <View style={styles.comment}>
                         <Text style={styles.commentText}>
-                            Go to Spar, Shoprite, Ackermans or Pep to deposit into this Pay@ account: 1161. Use your mobile number as a reference. Allow 4 hours for new balance to reflect.
+                            Go to Spar, Shoprite, Ackermans or Pep to deposit into this Pay @ account: 11611. Use your mobile number as a reference.Allow 4 hours
+                            for new balance to reflect.
                         </Text>
                     </View>
                     <View style={[styles.bankInfo, {flex: 6}]}/>
@@ -163,13 +164,13 @@ const styles = StyleSheet.create({
         backgroundColor: Colors.lightgray,
         alignItems: 'center',
         justifyContent: 'center',
-        paddingRight: 30,
-        paddingLeft: 30,
+        paddingHorizontal:20,
     },
     commentText: {
         fontSize: 16,
         textAlign: 'center',
         color: Colors.black,
+        textAlign: 'justify',
     },
     reference: {
         flex: 1,

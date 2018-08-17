@@ -239,13 +239,14 @@ export default class Transactions extends Component {
             <FlatList
               data={this.state.data}
              renderItem={({ item }) => {
-               console.log("item:", this.getAmount(item.amount, item.currency.divisibility))
               let sender = 'Received',
                 receiver = 'Sent';
 
-              if (item.tx_type == 'debit' && item.status == 'Complete') {
-                let { user } = item.destination_transaction;
-                receiver = `Paid to ${user.first_name} ${user.last_name}`;
+              if (item && item.tx_type == 'debit' && item.status == 'Complete') {
+                if (item.destination_transaction) {
+                  let { user } = item.destination_transaction;
+                  receiver = `Paid to ${user.first_name} ${user.last_name}`;
+                }
               }
               if (item.tx_type == 'credit' && item.status == 'Complete') {
                 if (item.source_transaction) {

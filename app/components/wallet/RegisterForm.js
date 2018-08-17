@@ -120,7 +120,6 @@ class RegisterForm extends Component {
           '  Please enter a valid mobile number or leave blank';
       }
     }
-    console.log(mobileNumber);
     this.setState({ mobileNumber, mobileNumberError });
     return mobileNumberStatus;
   }
@@ -177,9 +176,7 @@ class RegisterForm extends Component {
   };
 
   performRegister = async data => {
-    console.log(data);
     let responseJson = await AuthService.signup(data);
-    console.log(responseJson);
     if (responseJson.status === 'success') {
       const loginInfo = responseJson.data;
       if (data.mobile_number) {

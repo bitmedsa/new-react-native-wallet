@@ -27,7 +27,6 @@ export default class Document extends Component {
   }
 
   componentWillMount() {
-    console.log("title:", this.state.title)
     if (this.state.title === 'Proof of Identity' || this.state.title === 'ID Document') {
       this.setState({
         type: 'government_id',
